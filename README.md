@@ -6,8 +6,8 @@
 
 * Les flash messages
 
-* Un mot sur les routes
+* Un mot sur les routes : la syntaxe "resources"
 
-* Partage de vue
+* Partage de vue : les partials
 
 * Bonus : la gestion des images
