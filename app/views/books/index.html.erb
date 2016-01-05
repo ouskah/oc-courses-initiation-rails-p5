@@ -1,5 +1,14 @@
 <h1>Liste des livres</h1>
 
+<br/>
+
+
+<%= image_tag "penguins.jpg", width: 70, height: 70 %>
+
+<hr/>
+
+
+
 <% @books.each do |book| %>
     <p> <a href= "/books/<%= book.id %>"><%= book.title %></a> </p>
 <% end %>

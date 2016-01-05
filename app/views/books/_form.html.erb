@@ -1,0 +1,15 @@
+<%= form_for @book do %>
+    <input type="text" name="title" value="<%= @book.title %>" />
+    <h5 style="color:red; font-style:italic"> <%= @book.errors[:title].first %> </h5>
+    <h5 style="color: green; font-style: italic"><%= flash[:success] %></h5>
+
+    
+    <% if @book.persisted? %>
+        <input type="submit" value="Modifier le livre" />
+    <% else %>
+        <input type="submit" value="Ajouter le livre" />
+    <% end %>
+        
+        
+<% end %>
+
