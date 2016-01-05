@@ -1,0 +1,20 @@
+<h1><%= @book.title %></h1>
+
+<%= form_tag "/books/#{@book.id}", method: "patch" do %>
+    <input type="text" name="title" value="<%= @book.title %>" />
+    <p><%= @book.errors[:title].first %></p>
+    <input type="submit" value="Modifier le livre" />
+<% end %>
+
+<%= form_tag "/books/#{@book.id}", method: "delete" do %>
+    <input type="submit" value="Supprimer le livre" />
+<% end %>
+
+<p><a href="/books">Retourner à l'index</a></p>
+
+<br/>
+
+
+<!-- flash messages  -->
+<h5 style="color: green; font-style: italic"><%= flash[:success] %></h5>
+
