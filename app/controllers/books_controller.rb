@@ -3,14 +3,26 @@ class BooksController < ApplicationController
     def index
     
         @books = Book.all
+        @book = Book.new
     
     end
 
 
     def create
     
-        Book.create title: params[:title]
-        redirect_to "/books"
+        @book = Book.new title: params[:title]
+        
+        if @book.save
+            flash[:success] = "Le livre a bien été créé."
+            redirect_to "/books"
+        else
+            @books = Book.all
+            render "index"
+        end
+    
+    
+        # Book.create title: params[:title]
+        # redirect_to "/books"
     
     end
 

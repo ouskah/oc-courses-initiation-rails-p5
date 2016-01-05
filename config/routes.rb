@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-   resources :books, only: [:index, :create, :show, :update, :destroy] 
+   resources :books, only: [:index, :create, :show, :update, :destroy]
   
    # get     'books'           =>   'books#index'
 

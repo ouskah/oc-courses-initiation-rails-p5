@@ -1,10 +1,6 @@
-<h1><%= @book.title %></h1>
+<h1><%= @book.title_was %></h1>
 
-<%= form_tag "/books/#{@book.id}", method: "patch" do %>
-    <input type="text" name="title" value="<%= @book.title %>" />
-    <p><%= @book.errors[:title].first %></p>
-    <input type="submit" value="Modifier le livre" />
-<% end %>
+<%= render "books/form" %>
 
 <%= form_tag "/books/#{@book.id}", method: "delete" do %>
     <input type="submit" value="Supprimer le livre" />
@@ -14,6 +10,9 @@
 
 <br/>
 
-<!-- flash messages  -->
-<h5 style="color: green; font-style: italic"><%= flash[:success] %></h5>
+
+
+
+<!-- flash messages  (déplacé dans la partial : _form.html.erb -->
+<!-- <h5 style="color: green; font-style: italic"><%= flash[:success] %></h5> -->
 
